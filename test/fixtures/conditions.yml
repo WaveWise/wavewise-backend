@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  spot: one
+  swell-period-s: 1
+  swell-height-ft: 1
+  swell-direction: MyString
+  wind-speed-mph: 1
+  wind-direction: MyString
+  tide: MyString
+
+two:
+  spot: two
+  swell-period-s: 1
+  swell-height-ft: 1
+  swell-direction: MyString
+  wind-speed-mph: 1
+  wind-direction: MyString
+  tide: MyString
