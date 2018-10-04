@@ -12,7 +12,7 @@ Condition.destroy_all
 Spot.create!(
   id: 1,
   name: 'Surf City',
-  code: 'SC',
+  code: 'sc',
   coordinates: '34.366306,-77.628761',
   shore_angle: 'null'
 )
@@ -20,7 +20,7 @@ Spot.create!(
 Spot.create!(
   id: 2,
   name: 'Wrightsville Beach - North End',
-  code: 'WB_NE',
+  code: 'wb_ne',
   coordinates: '34.2358,-77.7754',
   shore_angle: 'null'
 )
@@ -28,7 +28,7 @@ Spot.create!(
 Spot.create!(
   id: 3,
   name: 'Wrightsville Beach - South End',
-  code: 'WB_SE',
+  code: 'wb_se',
   coordinates: '34.1935,-77.8050 ',
   shore_angle: 'null'
 )
@@ -36,7 +36,7 @@ Spot.create!(
 Spot.create!(
   id: 4,
   name: 'Carolina Beach',
-  code: 'CB',
+  code: 'cb',
   coordinates: '34.0570,-77.8814',
   shore_angle: 'null'
 )
