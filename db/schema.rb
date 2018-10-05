@@ -17,10 +17,10 @@ ActiveRecord::Schema.define(version: 2018_10_02_204752) do
 
   create_table "conditions", force: :cascade do |t|
     t.bigint "spot_id"
-    t.integer "swell_period_s"
-    t.integer "swell_height_ft"
+    t.string "swell_period_s"
+    t.string "swell_height_ft"
     t.string "swell_direction"
-    t.integer "wind_speed_mph"
+    t.string "wind_speed_mph"
     t.string "wind_direction"
     t.string "tide"
     t.datetime "created_at", null: false
