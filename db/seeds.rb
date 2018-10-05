@@ -6,8 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Spot.destroy_all
 Condition.destroy_all
+Spot.destroy_all
 
 Spot.create!(
   id: 1,
