@@ -42,6 +42,7 @@ Spot.create!(
 )
 
 Condition.create!(
+  id: 1,
   spot_id: 1,
   swell_period_s: 6.7,
   swell_height_ft: 3.4,
@@ -52,6 +53,7 @@ Condition.create!(
 )
 
 Condition.create!(
+  id: 2,
   spot_id: 2,
   swell_period_s: 12.1,
   swell_height_ft: 1.4,
@@ -62,6 +64,7 @@ Condition.create!(
 )
 
 Condition.create!(
+  id: 3,
   spot_id: 3,
   swell_period_s: 5.2,
   swell_height_ft: 1.2,
@@ -72,6 +75,7 @@ Condition.create!(
 )
 
 Condition.create!(
+  id: 4,
   spot_id: 4,
   swell_period_s: 10.8,
   swell_height_ft: 0.4,
