@@ -13,8 +13,8 @@ class Condition < ApplicationRecord
 
   def self.weather(short_code)
     @request = HTTParty.get(BASE_URL + API_PARTIAL + SECONDARY_URL + short_code).parsed_response
-    @date_string = Time.zone.today.to_s
-    @hour_string = (Time.zone.now.hour * 100).to_s
+    @date_string = Date.today.to_s
+    @hour_string = (Time.now.hour * 100).to_s
     @weather_data = @request.dig('data', 'weather')
     @today_weather = @weather_data.select { |key, _value| key['date'] == @date_string }.first
     @hour_weather = @today_weather.dig('hourly').select { |key, _value| key['time'] == @hour_string }.first
@@ -25,7 +25,7 @@ class Condition < ApplicationRecord
   def self.get_tide
     @time_difference = nil
     @tide_data.each do |data|
-      current_difference = (Time.zone.now - data['tideDateTime'].to_time).abs
+      current_difference = (Time.now - data['tideDateTime'].to_time).abs
       if @time_difference
         if current_difference < @time_difference
           @time_difference = current_difference
