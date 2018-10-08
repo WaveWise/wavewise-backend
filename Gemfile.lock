@@ -47,6 +47,7 @@ GEM
       msgpack (~> 1.0)
     builder (3.2.3)
     byebug (10.0.2)
+    chronic (0.10.2)
     concurrent-ruby (1.0.5)
     crass (1.0.4)
     erubi (1.7.1)
@@ -144,6 +145,7 @@ PLATFORMS
 DEPENDENCIES
   bootsnap (>= 1.1.0)
   byebug
+  chronic
   httparty
   jbuilder (~> 2.5)
   listen (>= 3.0.5, < 3.2)

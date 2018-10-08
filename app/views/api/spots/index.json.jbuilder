@@ -9,5 +9,6 @@ json.spots @spots do |spot|
   json.swell_direction spot.condition.swell_direction
   json.wind_speed_mph spot.condition.wind_speed_mph.to_f
   json.wind_direction spot.condition.wind_direction
-  json.tide spot.condition.tide
+  json.tide_type spot.condition.tide_type
+  json.tide_time spot.condition.tide_time
 end

@@ -3,7 +3,5 @@ Rails.application.routes.draw do
 
   namespace :api do
     get 'spots/index'
-    get 'conditions/index'
-    get 'conditions/update'
   end
 end

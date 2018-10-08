@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_02_204752) do
+ActiveRecord::Schema.define(version: 2018_10_08_173233) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,9 +22,10 @@ ActiveRecord::Schema.define(version: 2018_10_02_204752) do
     t.string "swell_direction"
     t.string "wind_speed_mph"
     t.string "wind_direction"
-    t.string "tide"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "tide_type"
+    t.string "tide_time"
     t.index ["spot_id"], name: "index_conditions_on_spot_id"
   end
 
