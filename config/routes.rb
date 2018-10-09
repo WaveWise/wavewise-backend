@@ -3,7 +3,5 @@ Rails.application.routes.draw do
 
   namespace :api do
     get 'spots/index'
-    post 'spot_rating/create'
-    post 'condition_rating/create'
   end
 end
