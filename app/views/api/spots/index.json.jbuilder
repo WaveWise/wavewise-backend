@@ -1,6 +1,7 @@
 json.spots @spots do |spot|
   json.spot_id spot.id
   json.rating Spot.rating(spot.id)
+  json.total_votes Spot.votes(spot.id)
   json.spot_name spot.name
   json.spot_code spot.code
   json.spot_coordinates spot.coordinates
