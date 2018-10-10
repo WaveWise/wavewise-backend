@@ -10,10 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_08_173233) do
+ActiveRecord::Schema.define(version: 2018_10_10_134108) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "condition_ratings", force: :cascade do |t|
+    t.bigint "spot_id"
+    t.uuid "user"
+    t.integer "rating"
+    t.string "condition_swell_period_s"
+    t.string "condition_swell_height_ft"
+    t.string "condition_swell_direction"
+    t.string "condition_wind_speed_mph"
+    t.string "condition_wind_direction"
+    t.string "condition_tide_type"
+    t.string "condition_tide_time"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["spot_id"], name: "index_condition_ratings_on_spot_id"
+  end
 
   create_table "conditions", force: :cascade do |t|
     t.bigint "spot_id"
@@ -38,5 +54,6 @@ ActiveRecord::Schema.define(version: 2018_10_08_173233) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "condition_ratings", "spots"
   add_foreign_key "conditions", "spots"
 end
