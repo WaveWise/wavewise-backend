@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_09_152513) do
+ActiveRecord::Schema.define(version: 2018_10_10_134108) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,15 +45,6 @@ ActiveRecord::Schema.define(version: 2018_10_09_152513) do
     t.index ["spot_id"], name: "index_conditions_on_spot_id"
   end
 
-  create_table "spot_ratings", force: :cascade do |t|
-    t.bigint "spot_id"
-    t.uuid "user"
-    t.integer "rating"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["spot_id"], name: "index_spot_ratings_on_spot_id"
-  end
-
   create_table "spots", force: :cascade do |t|
     t.string "name"
     t.string "code"
@@ -65,5 +56,4 @@ ActiveRecord::Schema.define(version: 2018_10_09_152513) do
 
   add_foreign_key "condition_ratings", "spots"
   add_foreign_key "conditions", "spots"
-  add_foreign_key "spot_ratings", "spots"
 end
