@@ -11,7 +11,7 @@ class Api::ConditionRatingController < ApplicationController
     @past_rating = ConditionRating.where(user: @user_id).where(
       'created_at BETWEEN ? AND ?', 3.hours.ago, Time.now
     )
-    if @past_rating.present?
+    if @past_rating.present? || @condition_rating.user.blank? || @condition_rating.rating.blank?
       render json: :forbidden
     else
       @condition_rating.save
