@@ -24,3 +24,4 @@
 /config/application.yml
 
 app/\.DS_Store
+sendgrid.env

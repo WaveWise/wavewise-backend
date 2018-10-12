@@ -3,6 +3,7 @@ class Api::NewSpotsController < ApplicationController
     @new_spot = NewSpot.new(new_spot_params)
     @new_spot.save
     render json: @new_spot
+    NewSpotMailer.new_spot_mailer(params[:email]).deliver
   end
 
   private
