@@ -9,7 +9,7 @@ class Api::ConditionRatingController < ApplicationController
   def user_check
     @user_id = @condition_rating.user
     @past_rating = ConditionRating.where(user: @user_id).where(
-      'created_at BETWEEN ? AND ?', 3.hours.ago, Time.now
+      'created_at BETWEEN ? AND ?', 1.hour.ago, Time.now
     )
     if @past_rating.present? ||
        @condition_rating.user.blank? ||
