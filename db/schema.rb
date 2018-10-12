@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_10_134108) do
+ActiveRecord::Schema.define(version: 2018_10_11_145045) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,6 +43,22 @@ ActiveRecord::Schema.define(version: 2018_10_10_134108) do
     t.string "tide_type"
     t.string "tide_time"
     t.index ["spot_id"], name: "index_conditions_on_spot_id"
+  end
+
+  create_table "new_spots", force: :cascade do |t|
+    t.string "user_name"
+    t.uuid "user"
+    t.string "email"
+    t.string "spot_name"
+    t.string "latitude"
+    t.string "longitude"
+    t.string "swell_period_s"
+    t.string "swell_height_ft"
+    t.string "swell_direction"
+    t.string "wind_direction"
+    t.string "tide_type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "spots", force: :cascade do |t|

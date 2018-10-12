@@ -11,7 +11,9 @@ class Api::ConditionRatingController < ApplicationController
     @past_rating = ConditionRating.where(user: @user_id).where(
       'created_at BETWEEN ? AND ?', 3.hours.ago, Time.now
     )
-    if @past_rating.present? || @condition_rating.user.blank? || @condition_rating.rating.blank?
+    if @past_rating.present? ||
+       @condition_rating.user.blank? ||
+       @condition_rating.rating.blank?
       render json: :forbidden
     else
       @condition_rating.save
@@ -21,16 +23,11 @@ class Api::ConditionRatingController < ApplicationController
 
   def condition_rating_params
     params.require(:condition_rating).permit(
-      :spot_id,
-      :user,
-      :rating,
-      :condition_swell_period_s,
-      :condition_swell_height_ft,
-      :condition_swell_direction,
-      :condition_wind_speed_mph,
-      :condition_wind_direction,
-      :condition_tide_type,
-      :condition_tide_time
+      :spot_id, :user,
+      :rating, :condition_swell_period_s,
+      :condition_swell_height_ft, :condition_swell_direction,
+      :condition_wind_speed_mph, :condition_wind_direction,
+      :condition_tide_type, :condition_tide_time
     )
   end
 end
