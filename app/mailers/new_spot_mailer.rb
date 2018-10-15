@@ -4,10 +4,12 @@ class NewSpotMailer < ApplicationMailer
 
   default from: 'info@wavewise.club'
 
-  def confirmation_mailer(email)
+  def confirmation_mailer(email, name, spot)
+    @name = name
+    @spot = spot
     mail(
       to: email,
-      subject: 'Thanks for submitting a surf spot!'
+      subject: "#{name}, thanks for submitting #{spot} as a new surf spot!"
     )
   end
 end

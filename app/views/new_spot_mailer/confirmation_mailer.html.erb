@@ -8,7 +8,12 @@
   </head>
 
   <body>
-    <p>Thanks for submitting a new surf spot! Your information helps us add more spots to the the app and help more people.</p>
+    <h1>WaveWise says "Thanks!"</h1>
+    <p> <%= "#{@name}" %>, </p>
+    <p>Thank you for submitting a new surf spot!</p> 
+    <p>Your information is used to add a new spot to our service and help surfers find the absolute best waves right now.</p>
+    <p><%= "#{@spot}" %> will be added to our service after we have had a chance to check the surf conditions.</p>
+    <p>The team at WaveWise appreciates you contribution to the surf community!</p>
     <%= yield %>
   </body>
 </html>
