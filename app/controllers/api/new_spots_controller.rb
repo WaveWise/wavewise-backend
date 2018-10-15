@@ -2,7 +2,7 @@ class Api::NewSpotsController < ApplicationController
   def create
     @new_spot = NewSpot.new(new_spot_params)
     @new_spot.save
-    NewSpotMailer.confirmation_mailer(params[:email]).deliver
+    NewSpotMailer.confirmation_mailer(params[:new_spot][:email]).deliver_now
     render json: @new_spot
   end
 

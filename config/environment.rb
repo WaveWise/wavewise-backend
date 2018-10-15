@@ -8,7 +8,7 @@ Rails.application.initialize!
 
 ActionMailer::Base.smtp_settings = {
   user_name: 'apikey',
-  password: ENV['SENDGRID_API_KEY'],
+  password: Rails.application.credentials[:SENDGRID_API_KEY],
   domain: 'wavewise.club',
   address: 'smtp.sendgrid.net',
   port: 587,
