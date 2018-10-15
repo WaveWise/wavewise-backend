@@ -2,8 +2,8 @@ class Api::NewSpotsController < ApplicationController
   def create
     @new_spot = NewSpot.new(new_spot_params)
     @new_spot.save
-    render json: @new_spot
     NewSpotMailer.new_spot_mailer(params[:email]).deliver
+    render json: @new_spot
   end
 
   private
@@ -15,7 +15,7 @@ class Api::NewSpotsController < ApplicationController
       :swell_height_ft, :swell_direction,
       :wind_direction, :tide_type
     ).merge(location_params)
-    end
+  end
 
   def location_params
     params.require(:new_spot).require(:location).permit(:latitude, :longitude)
