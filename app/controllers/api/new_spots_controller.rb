@@ -18,6 +18,6 @@ class Api::NewSpotsController < ApplicationController
       :swell_height_ft, :swell_direction,
       :wind_direction, :tide_type,
       :city, :state
-    ).
+    )
   end
 end
