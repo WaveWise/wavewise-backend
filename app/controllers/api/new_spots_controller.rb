@@ -16,11 +16,8 @@ class Api::NewSpotsController < ApplicationController
       :user_name, :user, :email, :spot_name,
       :swell_period_s,
       :swell_height_ft, :swell_direction,
-      :wind_direction, :tide_type
-    ).merge(location_params)
-  end
-
-  def location_params
-    params.require(:new_spot).require(:location).permit(:latitude, :longitude)
+      :wind_direction, :tide_type,
+      :city, :state
+    ).
   end
 end
